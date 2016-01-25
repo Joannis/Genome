@@ -17,7 +17,7 @@ An intermediate structure that represents data before it is mapped to objects.
 - ArrayValue: An array of objects.
 - ObjectValue: An collection of key/value paired objects.
 */
-public enum Node: CustomStringConvertible, CustomDebugStringConvertible, Equatable {
+public enum Node {
     
     // MARK: Values
     
@@ -175,7 +175,8 @@ extension Node {
 
 // MARK: Descriptions
 
-extension Node {
+extension Node: CustomStringConvertible, CustomDebugStringConvertible {
+    
     public var description: String {
         switch self {
         case .NullValue:
@@ -212,6 +213,8 @@ extension Node {
 }
 
 // MARK: Equatable
+
+extension Node: Equatable {}
 
 public func ==(lhs: Node, rhs: Node) -> Bool {
     switch lhs {
