@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Fuji Goro. All rights reserved.
 //
 
-import Foundation.NSNull
+import Foundation
 
 extension Node {
     
@@ -14,8 +14,12 @@ extension Node {
         switch any {
             // If we're coming from foundation, it will be an `NSNumber`.
             //This represents double, integer, and boolean.
-        case let number as Double:
-            return .NumberValue(number)
+        case let number as NSNumber:
+            if Double(number.integerValue) == number.doubleValue {
+                return .NumberValue(.IntegerValue(Int64(number.integerValue)))
+            } else {
+                return .NumberValue(.FractionalValue(number.doubleValue))
+            }
         case let string as String:
             return .StringValue(string)
         case let object as [String : AnyObject]:

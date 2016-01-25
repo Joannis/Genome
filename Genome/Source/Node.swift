@@ -23,7 +23,7 @@ public enum Node: CustomStringConvertible, CustomDebugStringConvertible, Equatab
     
     case NullValue
     case BooleanValue(Bool)
-    case NumberValue(Double)
+    case NumberValue(NodeNumberType)
     case StringValue(String)
     case ArrayValue([Node])
     case ObjectValue([String:Node])
@@ -34,8 +34,12 @@ public enum Node: CustomStringConvertible, CustomDebugStringConvertible, Equatab
         self = .BooleanValue(value)
     }
     
+    public init(_ value: Int) {
+        self = .NumberValue(.IntegerValue(Int64(value)))
+    }
+    
     public init(_ value: Double) {
-        self = .NumberValue(value)
+        self = .NumberValue(.FractionalValue(value))
     }
     
     public init(_ value: String) {
@@ -56,8 +60,16 @@ public enum Node: CustomStringConvertible, CustomDebugStringConvertible, Equatab
         return .BooleanValue(value)
     }
     
+    public static func from(value: UInt) -> Node {
+        return .NumberValue(.IntegerValue(Int64(value)))
+    }
+    
+    public static func from(value: Int) -> Node {
+        return .NumberValue(.IntegerValue(Int64(value)))
+    }
+    
     public static func from(value: Double) -> Node {
-        return .NumberValue(value)
+        return .NumberValue(.FractionalValue(value))
     }
     
     public static func from(value: String) -> Node {
@@ -86,10 +98,6 @@ extension Node {
         if case let .BooleanValue(bool) = self {
             return bool
         } else if let integer = intValue where integer == 1 || integer == 0 {
-            // When converting from foundation type `[String : AnyObject]`, something that I see as important,
-            // it's not possible to distinguish between 'bool', 'double', and 'int'.
-            // Because of this, if we have an integer that is 0 or 1, and a user is requesting a boolean val,
-            // it's fairly likely this is their desired result.
             return integer == 1
         } else {
             return nil
@@ -102,7 +110,7 @@ extension Node {
     }
     
     public var doubleValue: Double? {
-        guard case let .NumberValue(double) = self else {
+        guard case let .NumberValue(.FractionalValue(double)) = self else {
             return nil
         }
         
@@ -110,11 +118,11 @@ extension Node {
     }
     
     public var intValue: Int? {
-        guard case let .NumberValue(double) = self where double % 1 == 0 else {
+        guard case let .NumberValue(.IntegerValue(integer)) = self else {
             return nil
         }
         
-        return Int(double)
+        return Int(integer)
     }
     
     public var uintValue: UInt? {
@@ -216,7 +224,7 @@ public func ==(lhs: Node, rhs: Node) -> Bool {
         guard let rhsValue = rhs.stringValue else { return false }
         return lhsValue == rhsValue
     case .NumberValue(let lhsValue):
-        guard let rhsValue = rhs.doubleValue else { return false }
+        guard case let .NumberValue(rhsValue) = rhs else { return false }
         return lhsValue == rhsValue
     case .ArrayValue(let lhsValue):
         guard let rhsValue = rhs.arrayValue else { return false }
@@ -243,13 +251,13 @@ extension Node: BooleanLiteralConvertible {
 
 extension Node: IntegerLiteralConvertible {
     public init(integerLiteral value: IntegerLiteralType) {
-        self = .NumberValue(Double(value))
+        self = .NumberValue(.IntegerValue(Int64(value)))
     }
 }
 
 extension Node: FloatLiteralConvertible {
     public init(floatLiteral value: FloatLiteralType) {
-        self = .NumberValue(Double(value))
+        self = .NumberValue(.FractionalValue(value))
     }
 }
 

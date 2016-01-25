@@ -79,8 +79,7 @@ extension UInt64 : NodeConvertibleType {}
 
 extension UnsignedIntegerType {
     public func nodeRepresentation() throws -> Node {
-        let double = Double(UIntMax(self.toUIntMax()))
-        return .from(double)
+        return .from(UInt(toUIntMax()))
     }
     
     public static func newInstance(node: Node, context: Context = EmptyNode) throws -> Self {
@@ -102,8 +101,7 @@ extension Int64 : NodeConvertibleType {}
 
 extension SignedIntegerType {
     public func nodeRepresentation() throws -> Node {
-        let double = Double(IntMax(self.toIntMax()))
-        return .from(double)
+        return .from(Int(toIntMax()))
     }
     
     public static func newInstance(node: Node, context: Context = EmptyNode) throws -> Self {
