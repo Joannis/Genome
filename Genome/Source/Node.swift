@@ -6,7 +6,20 @@
 //  Copyright (c) 2014 Fuji Goro. All rights reserved.
 //
 
+/**
+An intermediate structure that represents data before it is mapped to objects.
+
+**Possible Values**
+- NullValue: No value (`NULL` or `nil`.)
+- BooleanValue: A boolean (`true` or `false`.)
+- NumberValue: A number.
+- StringValue: A string.
+- ArrayValue: An array of objects.
+- ObjectValue: An collection of key/value paired objects.
+*/
 public enum Node: CustomStringConvertible, CustomDebugStringConvertible, Equatable {
+    
+    // MARK: Values
     
     case NullValue
     case BooleanValue(Bool)
@@ -37,7 +50,7 @@ public enum Node: CustomStringConvertible, CustomDebugStringConvertible, Equatab
         self = .ObjectValue(value)
     }
     
-    // MARK: From
+    // MARK: Convenience Initalizers (From)
     
     public static func from(value: Bool) -> Node {
         return .BooleanValue(value)
@@ -60,9 +73,10 @@ public enum Node: CustomStringConvertible, CustomDebugStringConvertible, Equatab
     }
 }
 
-// MARK: Convenience
+// MARK: Convenience Value Retreival
 
 extension Node {
+    
     public var isNull: Bool {
         guard case .NullValue = self else { return false }
         return true
@@ -127,7 +141,10 @@ extension Node {
     }
 }
 
+// MARK: Subscripts
+
 extension Node {
+    
     public subscript(index: Int) -> Node? {
         assert(index >= 0)
         guard let array = arrayValue where index < array.count else { return nil }
@@ -147,6 +164,8 @@ extension Node {
         }
     }
 }
+
+// MARK: Descriptions
 
 extension Node {
     public var description: String {
@@ -183,6 +202,8 @@ extension Node {
         }
     }
 }
+
+// MARK: Equatable
 
 public func ==(lhs: Node, rhs: Node) -> Bool {
     switch lhs {

@@ -9,6 +9,7 @@
 import Foundation.NSNull
 
 extension Node {
+    
     public static func from(any: AnyObject) -> Node {
         switch any {
             // If we're coming from foundation, it will be an `NSNumber`.

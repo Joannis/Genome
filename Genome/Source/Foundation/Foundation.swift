@@ -8,6 +8,7 @@
 //  MIT
 
 extension MappableObject {
+    
     public init(node: AnyObject, context: [String : AnyObject] = [:]) throws {
         let safeNode = Node.from(node)
         let safeContext = Node.from(context)
