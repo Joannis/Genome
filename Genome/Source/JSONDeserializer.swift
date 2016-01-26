@@ -512,6 +512,9 @@ public class JSONDeserializer: Deserializer {
         // TODO: Handle numbers with exponents that become an integer.
         let sign = isNegative ? -1 : 1
         if hasDecimal || hasExponent {
+            // TODO: Need to find a way that maintains decimal percision.
+            // String conversion? What is the speed of that?
+            // Perhaps have NumberValue always be (mantissa, exponent, sign), and convert to decimal on demand?
             divisor /= 10
             var number = Double(sign) * (Double(integer) + (Double(decimal) / divisor))
             if hasExponent {
