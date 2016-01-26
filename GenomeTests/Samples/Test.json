@@ -1,0 +1,23 @@
+{
+    "unescapedString": "The quick brown fox jumped over the lazy dog.",
+    "escapingString": "\t\r\n\f\b\/\\\"",
+    "unicodeCharacter": "\uD83D\uDE00",
+    "integer": 3,
+    "negativeInteger": -3,
+    "largeInteger": 3e4,
+    "decimal": 3.14,
+    "negativeDecimal": -3.14,
+    "exponentedDecimal": 314e-2,
+    "decimalWithExponent": 3.14e2,
+    "justDecimal": .14,
+    "array": ["A", "B", "C", "D"],
+    "subObject": {
+        "a": "A",
+        "b": "B",
+        "c": "C",
+        "d": "D"
+    },
+    "true": true,
+    "false": false,
+    "null": null
+}

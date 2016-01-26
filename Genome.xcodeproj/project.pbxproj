@@ -95,6 +95,13 @@
 		EA02CEE21C512139002718AB /* Node+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02CEDF1C512139002718AB /* Node+Foundation.swift */; };
 		EA02CEE31C512139002718AB /* Node+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02CEDF1C512139002718AB /* Node+Foundation.swift */; };
 		EA02CEE41C512139002718AB /* Node+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02CEDF1C512139002718AB /* Node+Foundation.swift */; };
+		EA17435E1C57F7E1002CE495 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = EAA887981C565AC600DC11CA /* Test.json */; };
+		EA4CE0D91C56C1C400EE01F0 /* JSONConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */; };
+		EA4CE0DA1C56C1C400EE01F0 /* JSONConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */; };
+		EA4CE0DB1C56C1C400EE01F0 /* JSONConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */; };
+		EA4CE0DC1C56C1C400EE01F0 /* JSONConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */; };
+		EA4CE0DD1C56C1C400EE01F0 /* JSONConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */; };
+		EA4CE0DE1C56C1C400EE01F0 /* JSONConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */; };
 		EAA8878D1C5315D600DC11CA /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA8878C1C5315D600DC11CA /* Serializer.swift */; };
 		EAA8878F1C53198600DC11CA /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA8878E1C53198600DC11CA /* Deserializer.swift */; };
 		EAA887921C53DD7100DC11CA /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA887911C53DD7100DC11CA /* JSONSerializer.swift */; };
@@ -119,6 +126,12 @@
 		EAA887BE1C56929F00DC11CA /* NodeNumberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA887BA1C56929F00DC11CA /* NodeNumberType.swift */; };
 		EAA887BF1C56929F00DC11CA /* NodeNumberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA887BA1C56929F00DC11CA /* NodeNumberType.swift */; };
 		EAA887C01C56929F00DC11CA /* NodeNumberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA887BA1C56929F00DC11CA /* NodeNumberType.swift */; };
+		EAC040C11C57CFFA00808E3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC040C01C57CFFA00808E3B /* Constants.swift */; };
+		EAC040C21C57D17B00808E3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC040C01C57CFFA00808E3B /* Constants.swift */; };
+		EAC040C31C57D17B00808E3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC040C01C57CFFA00808E3B /* Constants.swift */; };
+		EAC040C41C57D17C00808E3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC040C01C57CFFA00808E3B /* Constants.swift */; };
+		EAC040C51C57D17C00808E3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC040C01C57CFFA00808E3B /* Constants.swift */; };
+		EAC040C61C57D17D00808E3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC040C01C57CFFA00808E3B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +184,7 @@
 		CF7F7DDB6C557B820931F617 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EA02CED91C511C9B002718AB /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		EA02CEDF1C512139002718AB /* Node+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Node+Foundation.swift"; sourceTree = "<group>"; };
+		EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONConstants.swift; sourceTree = "<group>"; };
 		EAA8878C1C5315D600DC11CA /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		EAA8878E1C53198600DC11CA /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializer.swift; sourceTree = "<group>"; };
 		EAA887911C53DD7100DC11CA /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
@@ -180,6 +194,7 @@
 		EAA887A51C56907100DC11CA /* DeserializationErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeserializationErrors.swift; sourceTree = "<group>"; };
 		EAA887AC1C5690CA00DC11CA /* SerializationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationError.swift; sourceTree = "<group>"; };
 		EAA887BA1C56929F00DC11CA /* NodeNumberType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeNumberType.swift; sourceTree = "<group>"; };
+		EAC040C01C57CFFA00808E3B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,8 +321,8 @@
 				8052E7841BB58178004E08F6 /* ToNodeOperatorTest.swift */,
 				80FC8F191BB6CEE30069CC5A /* TransformTests.swift */,
 				80A300B31C14E55300DDE54D /* NodeDataTypeTest.swift */,
-				8052E7761BB58102004E08F6 /* Info.plist */,
 				EAA887951C5659DE00DC11CA /* JSONConversion.swift */,
+				8052E7761BB58102004E08F6 /* Info.plist */,
 			);
 			path = GenomeTests;
 			sourceTree = "<group>";
@@ -345,6 +360,7 @@
 				EAA887A51C56907100DC11CA /* DeserializationErrors.swift */,
 				EAA887AC1C5690CA00DC11CA /* SerializationError.swift */,
 				8003F2B31C489586000ADD91 /* Logging.swift */,
+				EAC040C01C57CFFA00808E3B /* Constants.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -373,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				EAA887911C53DD7100DC11CA /* JSONSerializer.swift */,
+				EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */,
 				EAA887931C53DD7F00DC11CA /* JSONDeserializer.swift */,
 			);
 			name = JSON;
@@ -612,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8052E76A1BB58102004E08F6 /* LaunchScreen.storyboard in Resources */,
+				EA17435E1C57F7E1002CE495 /* Test.json in Resources */,
 				8052E7671BB58102004E08F6 /* Assets.xcassets in Resources */,
 				8052E7651BB58102004E08F6 /* Main.storyboard in Resources */,
 			);
@@ -642,10 +660,12 @@
 				8003F2D91C489586000ADD91 /* KeyType.swift in Sources */,
 				8003F2BB1C489586000ADD91 /* CollectionInitializers.swift in Sources */,
 				8003F2E31C489586000ADD91 /* Map.swift in Sources */,
+				EA4CE0DC1C56C1C400EE01F0 /* JSONConstants.swift in Sources */,
 				EA02CEDC1C511E97002718AB /* Node.swift in Sources */,
 				8003F2ED1C489586000ADD91 /* SettableOperator.swift in Sources */,
 				EAA887BE1C56929F00DC11CA /* NodeNumberType.swift in Sources */,
 				EAA887A91C56907100DC11CA /* DeserializationErrors.swift in Sources */,
+				EAC040C41C57D17C00808E3B /* Constants.swift in Sources */,
 				8003F2F71C489586000ADD91 /* Transformers.swift in Sources */,
 				8003F2F21C489586000ADD91 /* StandardOperators.swift in Sources */,
 				8003F2DE1C489586000ADD91 /* Logging.swift in Sources */,
@@ -667,10 +687,12 @@
 				8003F2DA1C489586000ADD91 /* KeyType.swift in Sources */,
 				8003F2BC1C489586000ADD91 /* CollectionInitializers.swift in Sources */,
 				8003F2E41C489586000ADD91 /* Map.swift in Sources */,
+				EA4CE0DD1C56C1C400EE01F0 /* JSONConstants.swift in Sources */,
 				EA02CEDD1C511E98002718AB /* Node.swift in Sources */,
 				8003F2EE1C489586000ADD91 /* SettableOperator.swift in Sources */,
 				EAA887BF1C56929F00DC11CA /* NodeNumberType.swift in Sources */,
 				EAA887AA1C56907100DC11CA /* DeserializationErrors.swift in Sources */,
+				EAC040C51C57D17C00808E3B /* Constants.swift in Sources */,
 				8003F2F81C489586000ADD91 /* Transformers.swift in Sources */,
 				8003F2F31C489586000ADD91 /* StandardOperators.swift in Sources */,
 				8003F2DF1C489586000ADD91 /* Logging.swift in Sources */,
@@ -692,10 +714,12 @@
 				8003F2D81C489586000ADD91 /* KeyType.swift in Sources */,
 				8003F2BA1C489586000ADD91 /* CollectionInitializers.swift in Sources */,
 				8003F2E21C489586000ADD91 /* Map.swift in Sources */,
+				EA4CE0DB1C56C1C400EE01F0 /* JSONConstants.swift in Sources */,
 				EA02CEDB1C511E96002718AB /* Node.swift in Sources */,
 				8003F2EC1C489586000ADD91 /* SettableOperator.swift in Sources */,
 				EAA887BD1C56929F00DC11CA /* NodeNumberType.swift in Sources */,
 				EAA887A81C56907100DC11CA /* DeserializationErrors.swift in Sources */,
+				EAC040C31C57D17B00808E3B /* Constants.swift in Sources */,
 				8003F2F61C489586000ADD91 /* Transformers.swift in Sources */,
 				8003F2F11C489586000ADD91 /* StandardOperators.swift in Sources */,
 				8003F2DD1C489586000ADD91 /* Logging.swift in Sources */,
@@ -717,10 +741,12 @@
 				8003F2DB1C489586000ADD91 /* KeyType.swift in Sources */,
 				8003F2BD1C489586000ADD91 /* CollectionInitializers.swift in Sources */,
 				8003F2E51C489586000ADD91 /* Map.swift in Sources */,
+				EA4CE0DE1C56C1C400EE01F0 /* JSONConstants.swift in Sources */,
 				EA02CEDE1C511E98002718AB /* Node.swift in Sources */,
 				8003F2EF1C489586000ADD91 /* SettableOperator.swift in Sources */,
 				EAA887C01C56929F00DC11CA /* NodeNumberType.swift in Sources */,
 				EAA887AB1C56907100DC11CA /* DeserializationErrors.swift in Sources */,
+				EAC040C61C57D17D00808E3B /* Constants.swift in Sources */,
 				8003F2F91C489586000ADD91 /* Transformers.swift in Sources */,
 				8003F2F41C489586000ADD91 /* StandardOperators.swift in Sources */,
 				8003F2E01C489586000ADD91 /* Logging.swift in Sources */,
@@ -739,6 +765,7 @@
 				EA02CEE01C512139002718AB /* Node+Foundation.swift in Sources */,
 				EAA887941C53DD7F00DC11CA /* JSONDeserializer.swift in Sources */,
 				8003F2DC1C489586000ADD91 /* Logging.swift in Sources */,
+				EAC040C11C57CFFA00808E3B /* Constants.swift in Sources */,
 				EAA8878F1C53198600DC11CA /* Deserializer.swift in Sources */,
 				8003F2BE1C489586000ADD91 /* MappingErrors.swift in Sources */,
 				8003F2CD1C489586000ADD91 /* NodeConvertibleType.swift in Sources */,
@@ -749,6 +776,7 @@
 				8003F2E11C489586000ADD91 /* Map.swift in Sources */,
 				EAA8878D1C5315D600DC11CA /* Serializer.swift in Sources */,
 				8003F2D71C489586000ADD91 /* KeyType.swift in Sources */,
+				EA4CE0D91C56C1C400EE01F0 /* JSONConstants.swift in Sources */,
 				EAA887921C53DD7100DC11CA /* JSONSerializer.swift in Sources */,
 				8003F2C81C489586000ADD91 /* Node+KeyPaths.swift in Sources */,
 				EAA887AD1C5690CA00DC11CA /* SerializationError.swift in Sources */,
@@ -774,6 +802,8 @@
 				80A300B51C15231400DDE54D /* SettableOperatorTest.swift in Sources */,
 				EAA887AE1C5690CA00DC11CA /* SerializationError.swift in Sources */,
 				8052E7871BB58178004E08F6 /* FromNodeOperatorTest.swift in Sources */,
+				EAC040C21C57D17B00808E3B /* Constants.swift in Sources */,
+				EA4CE0DA1C56C1C400EE01F0 /* JSONConstants.swift in Sources */,
 				80A300B41C14E55300DDE54D /* NodeDataTypeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

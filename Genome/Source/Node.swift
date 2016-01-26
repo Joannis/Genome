@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Fuji Goro. All rights reserved.
 //
 
+// MARK: Node
+
 /**
 An intermediate structure that represents data before it is mapped to objects.
 
@@ -21,11 +23,17 @@ public enum Node {
     
     // MARK: Values
     
+    /// No value (`NULL` or `nil`.)
     case NullValue
+    /// A boolean (`true` or `false`.)
     case BooleanValue(Bool)
+    /// A number.
     case NumberValue(NodeNumberType)
+    /// A string.
     case StringValue(String)
+    /// An array of objects.
     case ArrayValue([Node])
+    /// An collection of key/value paired objects.
     case ObjectValue([String:Node])
     
     // MARK: Initialization
@@ -98,6 +106,7 @@ extension Node {
         if case let .BooleanValue(bool) = self {
             return bool
         } else if let integer = intValue where integer == 1 || integer == 0 {
+            // With foundation types, booleans can be stored as integers. 
             return integer == 1
         } else {
             return nil
@@ -221,19 +230,29 @@ public func ==(lhs: Node, rhs: Node) -> Bool {
     case .NullValue:
         return rhs.isNull
     case .BooleanValue(let lhsValue):
-        guard let rhsValue = rhs.boolValue else { return false }
+        guard let rhsValue = rhs.boolValue else {
+            return false
+        }
         return lhsValue == rhsValue
     case .StringValue(let lhsValue):
-        guard let rhsValue = rhs.stringValue else { return false }
+        guard let rhsValue = rhs.stringValue else {
+            return false
+        }
         return lhsValue == rhsValue
     case .NumberValue(let lhsValue):
-        guard case let .NumberValue(rhsValue) = rhs else { return false }
+        guard case let .NumberValue(rhsValue) = rhs else {
+            return false
+        }
         return lhsValue == rhsValue
     case .ArrayValue(let lhsValue):
-        guard let rhsValue = rhs.arrayValue else { return false }
+        guard let rhsValue = rhs.arrayValue else {
+            return false
+        }
         return lhsValue == rhsValue
     case .ObjectValue(let lhsValue):
-        guard let rhsValue = rhs.objectValue else { return false }
+        guard let rhsValue = rhs.objectValue else {
+            return false
+        }
         return lhsValue == rhsValue
     }
 }

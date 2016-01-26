@@ -6,10 +6,23 @@
 //  Copyright © 2015 Tyrone Trevorrow. All rights reserved.
 //
 
+// MARK: NodeNumberType
+
+/**
+A node object that represents a number.
+
+**Possible Values**
+- IntegerValue: An integer (`Int` or `UInt`.)
+- FractionalValue: A number with a fractional component. (`Double` or `Float`.)
+*/
 public enum NodeNumberType {
+    /// An integer (`Int` or `UInt`.)
     case IntegerValue(Int64)
+    /// A number with a fractional component. (`Double` or `Float`.)
     case FractionalValue(Double)
 }
+
+// MARK: String Convertable
 
 extension NodeNumberType: CustomStringConvertible, CustomDebugStringConvertible {
     
@@ -31,6 +44,8 @@ extension NodeNumberType: CustomStringConvertible, CustomDebugStringConvertible 
         }
     }
 }
+
+// MARK: Equatable
 
 extension NodeNumberType: Equatable {}
 
