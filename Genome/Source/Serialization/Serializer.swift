@@ -21,7 +21,7 @@ protocol Serializer {
     /**
      Serializes the node given into a file if possible.
      - returns: Data representing the node the serializer was initialized with.
-     - throws: Throws a `SerializationError` if the node is unable to be serialized.
+     - throws: Throws a `SerializationError` if a node is unable to be serialized.
      */
     func parse() throws -> String.UnicodeScalarView
     

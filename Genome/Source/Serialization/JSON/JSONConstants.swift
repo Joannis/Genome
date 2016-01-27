@@ -3,14 +3,17 @@
 //  Genome
 //
 //  Created by McQuilkin, Brandon on 1/25/16.
-//  Copyright © 2016 lowriDevs. All rights reserved.
+//  Copyright © 2016 Brandon McQuilkin. All rights reserved.
 //
 
 internal struct JSONConstants {
     
     internal static let trueToken = [UnicodeScalar]("true".unicodeScalars)
+    internal static let trueString = "true"
     internal static let falseToken = [UnicodeScalar]("false".unicodeScalars)
+    internal static let falseString = "false"
     internal static let nullToken = [UnicodeScalar]("null".unicodeScalars)
+    internal static let nullString = "null"
     
     internal static let escapeMap = [
         "/".unicodeScalars.first!: Constants.solidus,

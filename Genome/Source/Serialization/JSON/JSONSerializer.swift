@@ -198,15 +198,15 @@ public class JSONSerializer: Serializer {
     private func serializeBool(bool: Bool) {
         switch bool {
         case true:
-            output.appendContentsOf("true")
+            output.appendContentsOf(JSONConstants.trueString)
         case false:
-            output.appendContentsOf("false")
+            output.appendContentsOf(JSONConstants.falseString)
         }
     }
     
     /// Serializes a null value.
     private func serializeNull() {
-        output.appendContentsOf("null")
+        output.appendContentsOf(JSONConstants.nullString)
     }
     
     /// Serializes a new line if necessary.
