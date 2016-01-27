@@ -33,9 +33,16 @@ class JSONConversionTest: XCTestCase {
     
     func testDeserialization() {
         let dataPath = NSBundle.mainBundle().pathForResource("Test", ofType: "json")!
-        let rawData = try! NSString(contentsOfFile: dataPath, encoding: NSUTF8StringEncoding)
-        let data = try! JSONDeserializer.deserialize(rawData as String)
+        let rawData = try! NSString(contentsOfFile: dataPath, encoding: NSUTF8StringEncoding) as String
+        let data = try! JSONDeserializer.deserialize(rawData)
         XCTAssert(data == testObject)
+    }
+    
+    func testSerialization() {
+        let data: String = try! JSONSerializer.serialize(testObject)
+        // TODO: A better way to test this is needed, as dictionary order is not guaranteed.
+        let stringRepresentation = "{\"decimal\":2.11,\"integer\":3,\"unicodeCharacter\":\"😀\",\"justDecimal\":0.17,\"subObject\":{\"b\":\"B\",\"d\":\"D\",\"c\":\"C\",\"a\":\"A\"},\"negativeInteger\":-5,\"true\":true,\"unescapedString\":\"The quick brown fox jumped over the lazy dog.\",\"exponentedDecimal\":1.23,\"negativeDecimal\":-6.59,\"null\":null,\"false\":false,\"escapingString\":\"\\t\\r\\n\\u000c\\b\\/\\\"\",\"array\":[\"A\",\"B\",\"C\",\"D\"],\"largeInteger\":70000.0,\"decimalWithExponent\":4560.0}"
+        XCTAssert(data == stringRepresentation)
     }
     
 }
