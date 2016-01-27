@@ -20,11 +20,12 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Serialization' do |ss|
     ss.source_files = 'Genome/Source/Serialization/*.{swift}'
+    ss.dependency 'Genome/Core'
+  end
 
-    spec.subspec 'JSON' do |json|
-      json.source_files = 'Genome/Source/Serialization/JSON/*.{swift}'
-    end
-
+  spec.subspec 'JSON' do |json|
+    json.source_files = 'Genome/Source/Serialization/JSON/*.{swift}'
+    json.dependency 'Genome/Serialization'
   end
 
 end
