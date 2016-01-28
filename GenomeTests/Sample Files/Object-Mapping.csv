@@ -1,0 +1,6 @@
+true,false,null,number
+true,false,null,2
+TRUE,FALSE,NULL,2.5
+True,False,Null,3e3
+True,False,,4.4e2
+True,False,Null,4e-2

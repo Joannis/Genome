@@ -1,0 +1,12 @@
+property 1, property 2, property 3, property 4
+A,B,C,D
+"A","B","C","D"
+A,"B",C,D
+"A""A","B""B","C""C","D""D"
+"""","""""","""""""",""""""""""
+"A
+A","B
+B","C
+C","D
+D"
+ "A,B",C"","D"

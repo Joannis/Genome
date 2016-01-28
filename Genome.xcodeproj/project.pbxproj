@@ -107,6 +107,11 @@
 		EA1743791C5925F3002CE495 /* CSVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1743751C5925F3002CE495 /* CSVConstants.swift */; };
 		EA17437A1C5925F3002CE495 /* CSVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1743751C5925F3002CE495 /* CSVConstants.swift */; };
 		EA17437B1C5925F3002CE495 /* CSVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1743751C5925F3002CE495 /* CSVConstants.swift */; };
+		EA1743831C5942EC002CE495 /* CSVDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1743821C5942EC002CE495 /* CSVDeserializer.swift */; };
+		EA1743841C5942EC002CE495 /* CSVDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1743821C5942EC002CE495 /* CSVDeserializer.swift */; };
+		EA1743851C5942EC002CE495 /* CSVDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1743821C5942EC002CE495 /* CSVDeserializer.swift */; };
+		EA1743861C5942EC002CE495 /* CSVDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1743821C5942EC002CE495 /* CSVDeserializer.swift */; };
+		EA1743871C5942EC002CE495 /* CSVDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1743821C5942EC002CE495 /* CSVDeserializer.swift */; };
 		EA4CE0D91C56C1C400EE01F0 /* JSONConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */; };
 		EA4CE0DA1C56C1C400EE01F0 /* JSONConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */; };
 		EA4CE0DB1C56C1C400EE01F0 /* JSONConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */; };
@@ -143,6 +148,13 @@
 		EAC040C41C57D17C00808E3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC040C01C57CFFA00808E3B /* Constants.swift */; };
 		EAC040C51C57D17C00808E3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC040C01C57CFFA00808E3B /* Constants.swift */; };
 		EAC040C61C57D17D00808E3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC040C01C57CFFA00808E3B /* Constants.swift */; };
+		EAF0DA8D1C5A6AB9009524EE /* Object-Parsing.csv in Resources */ = {isa = PBXBuildFile; fileRef = EAF0DA8C1C5A6AB9009524EE /* Object-Parsing.csv */; };
+		EAF0DA8F1C5A6B98009524EE /* Object-Mapping.csv in Resources */ = {isa = PBXBuildFile; fileRef = EAF0DA8E1C5A6B98009524EE /* Object-Mapping.csv */; };
+		EAF0DA911C5A6C15009524EE /* Array.csv in Resources */ = {isa = PBXBuildFile; fileRef = EAF0DA901C5A6C14009524EE /* Array.csv */; };
+		EAF0DA931C5A6C51009524EE /* CSVConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF0DA921C5A6C51009524EE /* CSVConversion.swift */; };
+		EAF0DA941C5A730F009524EE /* Object-Parsing.csv in Resources */ = {isa = PBXBuildFile; fileRef = EAF0DA8C1C5A6AB9009524EE /* Object-Parsing.csv */; };
+		EAF0DA951C5A730F009524EE /* Object-Mapping.csv in Resources */ = {isa = PBXBuildFile; fileRef = EAF0DA8E1C5A6B98009524EE /* Object-Mapping.csv */; };
+		EAF0DA961C5A730F009524EE /* Array.csv in Resources */ = {isa = PBXBuildFile; fileRef = EAF0DA901C5A6C14009524EE /* Array.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +207,7 @@
 		EA02CEDF1C512139002718AB /* Node+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Node+Foundation.swift"; sourceTree = "<group>"; };
 		EA1743671C592282002CE495 /* CSVSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSVSerializer.swift; path = Genome/Source/Serialization/CSV/CSVSerializer.swift; sourceTree = SOURCE_ROOT; };
 		EA1743751C5925F3002CE495 /* CSVConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSVConstants.swift; path = Genome/Source/Serialization/CSV/CSVConstants.swift; sourceTree = SOURCE_ROOT; };
+		EA1743821C5942EC002CE495 /* CSVDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVDeserializer.swift; sourceTree = "<group>"; };
 		EA4CE0D81C56C1C400EE01F0 /* JSONConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONConstants.swift; sourceTree = "<group>"; };
 		EAA8878C1C5315D600DC11CA /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		EAA8878E1C53198600DC11CA /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializer.swift; sourceTree = "<group>"; };
@@ -206,6 +219,10 @@
 		EAA887AC1C5690CA00DC11CA /* SerializationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationError.swift; sourceTree = "<group>"; };
 		EAA887BA1C56929F00DC11CA /* NodeNumberType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeNumberType.swift; sourceTree = "<group>"; };
 		EAC040C01C57CFFA00808E3B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EAF0DA8C1C5A6AB9009524EE /* Object-Parsing.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Object-Parsing.csv"; sourceTree = "<group>"; };
+		EAF0DA8E1C5A6B98009524EE /* Object-Mapping.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Object-Mapping.csv"; sourceTree = "<group>"; };
+		EAF0DA901C5A6C14009524EE /* Array.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Array.csv; sourceTree = "<group>"; };
+		EAF0DA921C5A6C51009524EE /* CSVConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVConversion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +337,7 @@
 				8052E7821BB58178004E08F6 /* GenomeSwiftTests.swift */,
 				8052E7761BB58102004E08F6 /* Info.plist */,
 				EAA887951C5659DE00DC11CA /* JSONConversion.swift */,
+				EAF0DA921C5A6C51009524EE /* CSVConversion.swift */,
 				80A300B31C14E55300DDE54D /* NodeDataTypeTest.swift */,
 				8052E7831BB58178004E08F6 /* SettableOperatorTest.swift */,
 				8052E7841BB58178004E08F6 /* ToNodeOperatorTest.swift */,
@@ -340,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				EA1743671C592282002CE495 /* CSVSerializer.swift */,
+				EA1743821C5942EC002CE495 /* CSVDeserializer.swift */,
 				EA1743751C5925F3002CE495 /* CSVConstants.swift */,
 			);
 			name = CSV;
@@ -411,6 +430,9 @@
 			isa = PBXGroup;
 			children = (
 				EAA887981C565AC600DC11CA /* Test.json */,
+				EAF0DA8C1C5A6AB9009524EE /* Object-Parsing.csv */,
+				EAF0DA8E1C5A6B98009524EE /* Object-Mapping.csv */,
+				EAF0DA901C5A6C14009524EE /* Array.csv */,
 			);
 			path = "Sample Files";
 			sourceTree = "<group>";
@@ -642,8 +664,11 @@
 			files = (
 				8052E76A1BB58102004E08F6 /* LaunchScreen.storyboard in Resources */,
 				EA17435E1C57F7E1002CE495 /* Test.json in Resources */,
+				EAF0DA951C5A730F009524EE /* Object-Mapping.csv in Resources */,
 				8052E7671BB58102004E08F6 /* Assets.xcassets in Resources */,
+				EAF0DA941C5A730F009524EE /* Object-Parsing.csv in Resources */,
 				8052E7651BB58102004E08F6 /* Main.storyboard in Resources */,
+				EAF0DA961C5A730F009524EE /* Array.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +677,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAA887991C565AC600DC11CA /* Test.json in Resources */,
+				EAF0DA8D1C5A6AB9009524EE /* Object-Parsing.csv in Resources */,
+				EAF0DA911C5A6C15009524EE /* Array.csv in Resources */,
+				EAF0DA8F1C5A6B98009524EE /* Object-Mapping.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +712,7 @@
 				8003F2F21C489586000ADD91 /* StandardOperators.swift in Sources */,
 				8003F2DE1C489586000ADD91 /* Logging.swift in Sources */,
 				EA02CEE21C512139002718AB /* Node+Foundation.swift in Sources */,
+				EA1743851C5942EC002CE495 /* CSVDeserializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +742,7 @@
 				8003F2F31C489586000ADD91 /* StandardOperators.swift in Sources */,
 				8003F2DF1C489586000ADD91 /* Logging.swift in Sources */,
 				EA02CEE31C512139002718AB /* Node+Foundation.swift in Sources */,
+				EA1743861C5942EC002CE495 /* CSVDeserializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +772,7 @@
 				8003F2F11C489586000ADD91 /* StandardOperators.swift in Sources */,
 				8003F2DD1C489586000ADD91 /* Logging.swift in Sources */,
 				EA02CEE11C512139002718AB /* Node+Foundation.swift in Sources */,
+				EA1743841C5942EC002CE495 /* CSVDeserializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +802,7 @@
 				8003F2F41C489586000ADD91 /* StandardOperators.swift in Sources */,
 				8003F2E01C489586000ADD91 /* Logging.swift in Sources */,
 				EA02CEE41C512139002718AB /* Node+Foundation.swift in Sources */,
+				EA1743871C5942EC002CE495 /* CSVDeserializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,6 +830,7 @@
 				8003F2D71C489586000ADD91 /* KeyType.swift in Sources */,
 				EA4CE0D91C56C1C400EE01F0 /* JSONConstants.swift in Sources */,
 				EAA887921C53DD7100DC11CA /* JSONSerializer.swift in Sources */,
+				EA1743831C5942EC002CE495 /* CSVDeserializer.swift in Sources */,
 				EA1743741C592401002CE495 /* CSVSerializer.swift in Sources */,
 				8003F2C81C489586000ADD91 /* Node+KeyPaths.swift in Sources */,
 				EAA887AD1C5690CA00DC11CA /* SerializationError.swift in Sources */,
@@ -813,6 +846,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF0DA931C5A6C51009524EE /* CSVConversion.swift in Sources */,
 				EA1743771C5925F3002CE495 /* CSVConstants.swift in Sources */,
 				EAA887BC1C56929F00DC11CA /* NodeNumberType.swift in Sources */,
 				8052E7851BB58178004E08F6 /* BasicTypes.swift in Sources */,

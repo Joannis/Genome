@@ -8,13 +8,8 @@
 
 internal struct CSVConstants {
     
-    internal static let trueTokenCapitalized = [UnicodeScalar]("TRUE".unicodeScalars)
-    internal static let trueTokenLowercase = [UnicodeScalar]("true".unicodeScalars)
-    internal static let trueString = "TRUE"
-    internal static let falseTokenCapitalized = [UnicodeScalar]("FALSE".unicodeScalars)
-    internal static let falseTokenLowercase = [UnicodeScalar]("false".unicodeScalars)
-    internal static let falseString = "FALSE"
-    internal static let nullTokenCapitalized = [UnicodeScalar]("NULL".unicodeScalars)
-    internal static let nullTokenLowercase = [UnicodeScalar]("null".unicodeScalars)
+    internal static let trueString = "true"
+    internal static let falseString = "false"
+    internal static let nullString = "null"
     
 }

@@ -70,13 +70,49 @@ public class CSVSerializer: Serializer {
         guard case let .ArrayValue(array) = rootNode else {
             throw SerializationError.UnsupportedNodeType
         }
-        try serializeArray(array)
+        try serializeMainArray(array)
         // Add the header if necessary
         if headerKeys.count > 0 {
             let header = (headerKeys.map({ generateSerializedString($0) }).joinWithSeparator(",")) + lineEndings.rawValue
             output = header + output
         }
         return output.unicodeScalars
+    }
+    
+    // Main Array
+    private func serializeMainArray(arr: [Node]) throws {
+        // Append all objects.
+        var isObjects: Bool?
+        var i = 0
+        for val in arr {
+            // The main array needs to be all objects, or all non-objects.
+            switch val {
+            case let .ObjectValue(obj):
+                if isObjects == false {
+                    throw SerializationError.UnsupportedNodeType
+                }
+                try serializeObject(obj)
+                isObjects = true
+            case let .ArrayValue(arr):
+                if isObjects == true {
+                    throw SerializationError.UnsupportedNodeType
+                }
+                try serializeArray(arr)
+                isObjects = false
+            default:
+                if isObjects == true {
+                    throw SerializationError.UnsupportedNodeType
+                }
+                try serializeValue(val)
+                isObjects = false
+            }
+            // Add a new line
+            i += 1
+            if i != arr.count {
+                output.appendContentsOf(lineEndings.rawValue)
+            }
+        }
+        // End the array.
     }
     
     // Calles the correct serializer based on the node's type.
@@ -93,8 +129,9 @@ public class CSVSerializer: Serializer {
             break
         case .StringValue(let s):
             serializeString(s)
-        case .ObjectValue(let obj):
-            try serializeObject(obj)
+        case .ObjectValue:
+            // Objects are not supported unless they are direct children of the main array.
+            throw SerializationError.UnsupportedNodeType
         case .BooleanValue(let b):
             serializeBool(b)
         case .ArrayValue:
@@ -109,12 +146,7 @@ public class CSVSerializer: Serializer {
         for key in headerKeys {
             // Serialize the object
             if let value = obj[key] {
-                switch value {
-                case .ObjectValue:
-                    throw SerializationError.UnsupportedNodeType
-                default:
-                    try serializeValue(value)
-                }
+                try serializeValue(value)
             } else {
                 try serializeValue(.NullValue)
             }
@@ -130,12 +162,7 @@ public class CSVSerializer: Serializer {
             // Add the key
             headerKeys.append(key)
             // Add the new object
-            switch value {
-            case .ObjectValue:
-                throw SerializationError.UnsupportedNodeType
-            default:
-                try serializeValue(value)
-            }
+            try serializeValue(value)
             // Add a separator
             i += 1
             if i != obj.count {
@@ -150,10 +177,10 @@ public class CSVSerializer: Serializer {
         var i = 0
         for val in arr {
             try serializeValue(val)
-            // Add a new line
+            // Add a comma if necessary
             i += 1
             if i != arr.count {
-                output.appendContentsOf(lineEndings.rawValue)
+                output.append(Constants.comma)
             }
         }
         // End the array.
