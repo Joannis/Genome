@@ -103,9 +103,10 @@ public class CSVDeserializer: Deserializer {
             case Constants.comma:
                 try nextScalar()
             case Constants.carriageReturn, Constants.lineFeed:
+                try nextScalar()
                 break outerLoop
             default:
-                if let key = try nextValue(true).stringValue {
+                if let key = try nextValue(true).node.stringValue {
                     headerKeys.append(key)
                 }
             }
@@ -153,18 +154,30 @@ public class CSVDeserializer: Deserializer {
     /// Parses a line of values into an array.
     private func nextArray() throws -> Node {
         var array: [Node] = []
+        var previousWasComma = false
         // Iterate the columns into arrays.
         outerLoop: repeat {
             switch scalar {
             case Constants.comma:
+                // If the previous was a comma, there was an empty value.
+                if previousWasComma {
+                    array.append(.NullValue)
+                }
+                previousWasComma = true
                 try nextScalar()
             case Constants.carriageReturn, Constants.lineFeed:
+                previousWasComma = false
                 break outerLoop
             default:
+                previousWasComma = false
                 do {
-                    array.append(try nextValue())
+                    let value = try nextValue()
+                    array.append(value.node)
                     
-                    //try nextScalar()
+                    if value.endOfFile == true {
+                        break outerLoop
+                    }
+                    
                 } catch DeserializationError.EndOfFile {
                     break outerLoop
                 }
@@ -178,11 +191,17 @@ public class CSVDeserializer: Deserializer {
     /// Parses a line of values into an object.
     private func nextObject() throws -> Node {
         var object: [String: Node] = [:]
+        var previousWasComma = false
         // Iterate the columns into object values.
         var i = 0
         outerLoop: repeat {
             switch scalar {
             case Constants.comma:
+                // If the previous was a comma, there was an empty value.
+                if previousWasComma {
+                    object[headerKeys[i]] = .NullValue
+                }
+                previousWasComma = true
                 try nextScalar()
                 // Iterate which key we are on.
                 i += 1
@@ -192,12 +211,17 @@ public class CSVDeserializer: Deserializer {
                     break outerLoop
                 }
             case Constants.carriageReturn, Constants.lineFeed:
+                previousWasComma = false
                 break outerLoop
             default:
+                previousWasComma = false
                 // Add the value to the object
                 do {
-                    object[headerKeys[i]] = try nextValue()
-                    try nextScalar()
+                    let value = try nextValue()
+                    object[headerKeys[i]] = value.node
+                    if value.endOfFile == true {
+                        break outerLoop
+                    }
                 } catch DeserializationError.EndOfFile {
                     break outerLoop
                 }
@@ -208,9 +232,11 @@ public class CSVDeserializer: Deserializer {
     }
     
     /// Parses string data
-    private func nextValue(processingHeader: Bool = false) throws -> Node {
+    private func nextValue(processingHeader: Bool = false) throws -> (node: Node, endOfFile: Bool) {
         // Whether or not we are in a set of quotes. If we are double quotes and newlines are part of the string.
         var escaping = false
+        // End of file
+        var endOfFile = false
         // Check to see that the next token is a quotation mark.
         if scalar == Constants.quotationMark {
             // Skip opening quotation
@@ -263,15 +289,16 @@ public class CSVDeserializer: Deserializer {
             } while true // We only manually break the loop.
         } catch DeserializationError.EndOfFile {
             // This is ok if we are not escaping.
+            endOfFile = true
             if escaping {
                 throw DeserializationError.EndOfFile
             }
         }
         
         if mapValues && !processingHeader {
-            return parseValue(strBuilder)
+            return (parseValue(strBuilder), endOfFile)
         } else {
-            return .StringValue(strBuilder)
+            return (.StringValue(strBuilder), endOfFile)
         }
     }
     
@@ -362,7 +389,7 @@ public class CSVDeserializer: Deserializer {
                     break outerLoop
                 }
                 // Determine if the exponenet is positive or negative.
-                switch scalar {
+                switch nScalar {
                 case "0".unicodeScalars.first!..."9".unicodeScalars.first!:
                     positiveExponent = true
                 case Constants.plusScalar:

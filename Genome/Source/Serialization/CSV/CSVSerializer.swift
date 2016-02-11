@@ -126,7 +126,7 @@ public class CSVSerializer: Serializer {
                 serializeInt64(i)
             }
         case .NullValue:
-            break
+            serializeNull()
         case .StringValue(let s):
             serializeString(s)
         case .ObjectValue:
@@ -184,6 +184,11 @@ public class CSVSerializer: Serializer {
             }
         }
         // End the array.
+    }
+    
+    // Serialize nulls.
+    private func serializeNull() {
+        output.appendContentsOf(CSVConstants.nullString)
     }
     
     // Serialize strings.
